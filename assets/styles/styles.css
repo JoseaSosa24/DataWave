@@ -1,3 +1,7 @@
+.navbar{
+  background-color: #e9e6e1;
+}
+
 .columnaAdaptada {
   height: 100%;
   background-color: #e9e6e1;
@@ -13,7 +17,7 @@
 }
 
 /*Home*/
-.body-home {
+.body-home { 
   background-color: #e9e6e1;
 }
 .sing-off {
@@ -24,4 +28,12 @@
 }
 .sing-off:hover {
   transform: scale(1.1);
+}
+
+.text{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 12%;
+  width: 76%;
+  text-align: center;
 }
