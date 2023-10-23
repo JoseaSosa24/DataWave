@@ -1,4 +1,4 @@
-from Empleado import Empleado
+from empleado import Empleado
 
 generarEmpleado = Empleado()
 
