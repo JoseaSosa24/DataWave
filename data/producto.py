@@ -1,6 +1,6 @@
 import random
 productos = []
-for _ in range(1000):
+for _ in range(3000):
     
     productoId=random.randint(0,500000)
     nombreProducto=random.choice(['Camisa', 'Pantalon', 'Sudadera', 'Chompa','Blue Jean'])

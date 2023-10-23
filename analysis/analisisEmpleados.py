@@ -11,7 +11,24 @@ empleadosDataFrame = pd.read_csv('data/empleados.csv')
 print(empleadosDataFrame)
 
 # 3. Explorar los datos (puedes realizar operaciones de análisis y filtrado aquí)
+examen1 = empleadosDataFrame.head()
+examen2 = empleadosDataFrame.tail()
+examen3 = empleadosDataFrame.head(20)
+examen4 = empleadosDataFrame.info()
+examen5 = empleadosDataFrame.describe()
+examen6 = empleadosDataFrame.tail(50)
 
-
+print(examen1)
+print("\n")
+print(examen2)
+print("\n")
+print(examen3)
+print("\n")
+print(examen4)
+print("\n")
+print(examen5)
+print("\n")
+print(examen6)
+print("\n")
 
 # 4. Filtrar y ordenar (limpiar) según tus necesidades
