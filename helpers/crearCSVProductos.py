@@ -1,9 +1,8 @@
 import csv
 
-
-def crearCSVVentas(lista, nombreCSV):
+def crearCSVProductos(lista, nombreCSV):
 
     with open('data/'+nombreCSV,mode='w',newline='',encoding='utf-8') as archivo_csv:
         writer=csv.writer(archivo_csv)
-        writer.writerow(['NumeroOrden','Cliente','Costo'])
+        writer.writerow(['Id_producto','Nombre','Precio_unitario', 'iva'])
         writer.writerows(lista)

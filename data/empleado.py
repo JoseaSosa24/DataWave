@@ -1,6 +1,5 @@
 import random
 
-
 class Empleado:
 
     def __init__(self):
