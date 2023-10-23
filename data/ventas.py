@@ -8,4 +8,4 @@ for _ in range(1000):
     orden = [numeroOrden, cliente, costo]
     ventas.append(orden)
     
-print(ventas)
+#print(ventas)

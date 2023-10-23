@@ -1,7 +1,7 @@
-from empleado import Empleado
+from Empleado import Empleado
 
 generarEmpleado = Empleado()
 
 listaEmpleados = generarEmpleado.generar_empleado(50)
 
-print(listaEmpleados)
+#print(listaEmpleados)
