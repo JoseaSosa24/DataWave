@@ -1,7 +1,7 @@
 import pandas as pd
 
-
 from helpers.crearCSVProductos import crearCSVProductos
+from helpers.crearTablaHTML import crearTabla
 
 from data.producto import productos
 
@@ -10,7 +10,8 @@ crearCSVProductos(productos,'productos.csv')
 
 "#2 Cargo la fuente de datos y con pandos PANDAS creo un DATAFRAME"
 productosDataFrame=pd.read_csv('data/productos.csv')
-print(productosDataFrame)
+crearTabla(productosDataFrame, 'tablaproductos')
+#print(productosDataFrame)
 
 #3.Explorar los datos
 examen1 = productosDataFrame.head()
@@ -25,16 +26,4 @@ examen6 = productosDataFrame.tail(50)
 #5. aplicar modelos estadísticos
 
 #6. Presentar y explorar losd datos
-print(examen1)
-print("\n")
-print(examen2)
-print("\n")
-print(examen3)
-print("\n")
-print(examen4)
-print("\n")
-print(examen5)
-print("\n")
-print(examen6)
-print("\n")
 
