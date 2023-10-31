@@ -14,14 +14,22 @@ crearTabla(productosDataFrame, 'tablaproductos')
 #print(productosDataFrame)
 
 #3.Explorar los datos
-examen1 = productosDataFrame.head()
-examen2 = productosDataFrame.tail()
-examen3 = productosDataFrame.head(20)
-examen4 = productosDataFrame.info()
-examen5 = productosDataFrame.describe()
-examen6 = productosDataFrame.tail(50)
+#examen1 = productosDataFrame.head()
+#examen2 = productosDataFrame.tail()
+#examen3 = productosDataFrame.head(20)
+#examen4 = productosDataFrame.info()
+#examen5 = productosDataFrame.describe()
+#examen6 = productosDataFrame.tail(50)
 
 #4.Filtrar y ordenar (limpiar)
+
+filtroUno = productosDataFrame.query("(Precio_unitario>500000)")
+filtroProducto = filtroUno[['Id_producto','Nombre','Precio_unitario']]
+#print(filtroProducto)
+
+filtroDos = productosDataFrame.query("(Precio_unitario>0) and (Precio_unitario<250000)")
+filtroProductoDos = filtroDos[['Id_producto','Nombre','Precio_unitario']]
+#print(filtroProductoDos)
 
 #5. aplicar modelos estadísticos
 

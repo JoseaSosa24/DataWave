@@ -13,6 +13,7 @@ class Empleado:
 
             identificador = _+1
             nombre = random.choice(['Andrés', 'Jose', 'Manuela', 'Jhohan'])
+            apellido = random.choice(['Alarcon', 'Novoa', 'Sosa', 'Valderrama'])
             cargo = random.choice(['Gerente', 'Desarrollador', 'Diseñador', 'Analista'])
             edad = random.randint(22,60)
             salario = random.randint(1160000, 20000000)
@@ -23,7 +24,7 @@ class Empleado:
             else:
                 retefuente = 0.0
 
-            empleado = {"id": identificador, "nombre":nombre,"cargo":cargo,"edad":edad,"retefuente":retefuente,"salario":salario}
+            empleado = {"id": identificador, "nombre":nombre,"apellido":apellido,"cargo":cargo,"edad":edad,"retefuente":retefuente,"salario":salario}
             empleados.append(empleado)
     
         return empleados
@@ -31,7 +32,6 @@ class Empleado:
 
 
     
-           
 # Armar lista de empleados
 # llevar la lista a análisis
 #Cnvertir los la lita de empleados en dataframe
