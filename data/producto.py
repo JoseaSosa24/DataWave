@@ -8,3 +8,4 @@ for _ in range(3000):
     iva = 0.19
     orden = [productoId, nombreProducto, costoUnitario, iva]
     productos.append(orden)
+    

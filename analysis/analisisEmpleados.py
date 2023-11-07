@@ -11,7 +11,7 @@ lista = empleados.generar_empleado(2000)
 crearCSVEmpleados(lista, 'empleados.csv')
 
 # 2. Cargar la fuente de datos y crear un DataFrame con pandas
-empleadosDataFrame = pd.read_csv('data/empleados.csv')
+empleadosDataFrame = pd.read_csv('data/empleados.csv', encoding='latin-1')
 crearTabla(empleadosDataFrame, 'tablaempleados')
 #print(empleadosDataFrame)
 
@@ -40,3 +40,8 @@ filtroEmpleadoTres = filtroUno[['Nombre','Cargo','Apellido']]
 filtroUno = empleadosDataFrame.query("(Salario>2500000)")
 filtroEmpleadoCuatro = filtroUno[['Nombre','Cargo','Apellido']]
 #print(filtroEmpleadoCuatro)
+
+crearTabla(filtroEmpleado,'empleadosJovenes')
+crearTabla(filtroEmpleadoDos,'empleadosMayores')
+crearTabla(filtroEmpleadoTres,'empleadosDesarroladores')
+crearTabla(filtroEmpleadoCuatro,'salariosAltos')
