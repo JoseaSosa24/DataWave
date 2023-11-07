@@ -28,7 +28,7 @@ filtroUno = ventasDataFrame.query("(Costo>500000)")
 totalVentas = filtroUno[['NumeroOrden','Costo']]
 #print(totalVentas)
 
-filtroDos = ventasDataFrame.query("(Costo>100000) and (Costo<600000)")
+filtroDos = ventasDataFrame.query("(Costo>100000) and (Costo<250000)")
 totalVentas2 = filtroDos[['NumeroOrden','Costo']]
 #print(totalVentas2)
 
@@ -36,5 +36,5 @@ totalVentas2 = filtroDos[['NumeroOrden','Costo']]
 #5. aplicar modelos estadísticos
 
 #6. Presentar y explorar los datos
-crearTabla(totalVentas,'ventasAltosCostos')
-crearTabla(totalVentas2,'ventasBajoCosto')
+#crearTabla(totalVentas,'ventasAltosCostos')
+#crearTabla(totalVentas2,'ventasBajoCosto')

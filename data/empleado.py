@@ -12,9 +12,9 @@ class Empleado:
         for _ in range(cantidad):
 
             identificador = _+1
-            nombre = random.choice(['Andrés', 'Jose', 'Manuela', 'Jhohan'])
-            apellido = random.choice(['Alarcon', 'Novoa', 'Sosa', 'Valderrama'])
-            cargo = random.choice(['Gerente', 'Desarrollador', 'Diseñador', 'Analista'])
+            nombre = random.choice([u'Andrés', u'Jose', u'Manuela', u'Jhohan'])
+            apellido = random.choice([u'Alarcon', u'Novoa', u'Sosa', u'Valderrama'])
+            cargo = random.choice([u'Gerente', u'Desarrollador', u'Diseñador', u'Analista'])
             edad = random.randint(22,60)
             salario = random.randint(1160000, 20000000)
             retefuente = 0

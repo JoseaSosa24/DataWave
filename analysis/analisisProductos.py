@@ -34,4 +34,5 @@ filtroProductoDos = filtroDos[['Id_producto','Nombre','Precio_unitario']]
 #5. aplicar modelos estadísticos
 
 #6. Presentar y explorar losd datos
-
+#crearTabla(filtroProducto,'productosAltosCostos')
+#crearTabla(filtroProductoDos,'productosBajoCosto')
