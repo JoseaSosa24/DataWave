@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 from helpers.crearCSVVentas import crearCSVVentas
 from helpers.crearTablaHTML import crearTabla
@@ -33,8 +34,25 @@ totalVentas2 = filtroDos[['NumeroOrden','Costo']]
 #print(totalVentas2)
 
 
-#5. aplicar modelos estadísticos
 
 #6. Presentar y explorar los datos
-#crearTabla(totalVentas,'ventasAltosCostos')
-#crearTabla(totalVentas2,'ventasBajoCosto')
+ventasAltas = ventasDataFrame.nlargest(5, "Costo")
+ventasBajas = ventasDataFrame.nsmallest(5, "Costo")
+print(ventasBajas)
+
+
+# graficando un dataframe con MATPLOTLIB
+ventasAltas["NumeroOrden"] = ventasAltas["NumeroOrden"].astype(str)
+colores = ['blue', 'green', '#EFEC1B', 'orange', 'purple' ]
+plt.figure(figsize=(5,10))
+plt.bar(ventasAltas["NumeroOrden"], ventasAltas["Costo"], color = colores)
+
+#Personalizando la gráfica
+plt.xlabel("Numero de orden")
+plt.ylabel("Costo")
+plt.title("Ventas más altas en el último mes")
+plt.xticks(rotation = 45)
+#plt.show()
+
+rutaGrafica = "figuras/barrasventas.png"
+plt.savefig(rutaGrafica)
