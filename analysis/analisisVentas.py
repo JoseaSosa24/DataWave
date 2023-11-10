@@ -1,21 +1,22 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 from helpers.crearCSVVentas import crearCSVVentas
 from helpers.crearTablaHTML import crearTabla
+from helpers.crearGraficaVentas import graficar
 
 from data.ventas import ventas
 
-#1. Crear un CSV con los datos de las ventas
-crearCSVVentas(ventas,'ventas.csv')
+# 1. Crear un CSV con los datos de las ventas
+crearCSVVentas(ventas, 'ventas.csv')
 
 "#2 Cargo la fuente de datos y con pandos PANDAS creo un DATAFRAME"
-ventasDataFrame=pd.read_csv('data/ventas.csv')
+ventasDataFrame = pd.read_csv('data/ventas.csv')
 crearTabla(ventasDataFrame, 'tablaventas')
 
-#print(ventasDataFrame)
+# print(ventasDataFrame)
 
-#3.Explorar los datos
+# 3.Explorar los datos
 # examen1 = ventasDataFrame.head()
 # examen2 = ventasDataFrame.tail()
 # examen3 = ventasDataFrame.head(20)
@@ -23,36 +24,30 @@ crearTabla(ventasDataFrame, 'tablaventas')
 # examen5 = ventasDataFrame.describe()
 # examen6 = ventasDataFrame.tail(50)
 
-#4.Filtrar y ordenar (limpiar)
+# 4.Filtrar y ordenar (limpiar)
 
 filtroUno = ventasDataFrame.query("(Costo>500000)")
-totalVentas = filtroUno[['NumeroOrden','Costo']]
-#print(totalVentas)
+totalVentas = filtroUno[['NumeroOrden', 'Costo']]
+# print(totalVentas)
 
 filtroDos = ventasDataFrame.query("(Costo>100000) and (Costo<250000)")
-totalVentas2 = filtroDos[['NumeroOrden','Costo']]
-#print(totalVentas2)
+totalVentas2 = filtroDos[['NumeroOrden', 'Costo']]
+# print(totalVentas2)
 
 
-
-#6. Presentar y explorar los datos
+# 6. Presentar y explorar los datos
 ventasAltas = ventasDataFrame.nlargest(5, "Costo")
 ventasBajas = ventasDataFrame.nsmallest(5, "Costo")
-print(ventasBajas)
+#print(ventasBajas)
 
 
 # graficando un dataframe con MATPLOTLIB
-ventasAltas["NumeroOrden"] = ventasAltas["NumeroOrden"].astype(str)
-colores = ['blue', 'green', '#EFEC1B', 'orange', 'purple' ]
-plt.figure(figsize=(5,10))
-plt.bar(ventasAltas["NumeroOrden"], ventasAltas["Costo"], color = colores)
+graficar(ventasAltas, "figuras/barrasventasAltas.png","Numero de orden",
+"Costo",
+"Ventas más altas en el último mes",
+45)
+graficar(ventasBajas,"figuras/barrasventasBajas.png","Numero de orden",
+"Costo",
+"Ventas más bajas en el último mes",
+45)
 
-#Personalizando la gráfica
-plt.xlabel("Numero de orden")
-plt.ylabel("Costo")
-plt.title("Ventas más altas en el último mes")
-plt.xticks(rotation = 45)
-#plt.show()
-
-rutaGrafica = "figuras/barrasventas.png"
-plt.savefig(rutaGrafica)
