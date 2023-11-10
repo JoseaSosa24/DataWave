@@ -2,6 +2,7 @@ import pandas as pd
 
 from helpers.crearCSVEmpleados import crearCSVEmpleados
 from helpers.crearTablaHTML import crearTabla
+from helpers.crearGrafica import graficar
 
 from data.empleado import Empleado  
 
@@ -41,7 +42,17 @@ filtroUno = empleadosDataFrame.query("(Salario>2500000)")
 filtroEmpleadoCuatro = filtroUno[['Nombre','Cargo','Apellido']]
 #print(filtroEmpleadoCuatro)
 
-crearTabla(filtroEmpleado,'empleadosJovenes')
+""" crearTabla(filtroEmpleado,'empleadosJovenes')
 crearTabla(filtroEmpleadoDos,'empleadosMayores')
 crearTabla(filtroEmpleadoTres,'empleadosDesarroladores')
-crearTabla(filtroEmpleadoCuatro,'salariosAltos')
+crearTabla(filtroEmpleadoCuatro,'salariosAltos') """
+
+# 6. Presentar y explorar los datos
+EmpleadosMasGanan = empleadosDataFrame.nlargest(10, 'Salario')
+print(EmpleadosMasGanan)
+
+# graficando un dataframe con MATPLOTLIB
+graficar(EmpleadosMasGanan, "figuras/barrasEmpleados.png","ID","Salario","Identificación",
+"Salario",
+"Los empleados que mas ganan",
+45)

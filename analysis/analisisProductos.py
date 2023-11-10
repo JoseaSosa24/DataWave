@@ -2,6 +2,7 @@ import pandas as pd
 
 from helpers.crearCSVProductos import crearCSVProductos
 from helpers.crearTablaHTML import crearTabla
+from helpers.crearGrafica import graficar
 
 from data.producto import productos
 
@@ -33,6 +34,15 @@ filtroProductoDos = filtroDos[['Id_producto','Nombre','Precio_unitario']]
 
 #5. aplicar modelos estadísticos
 
-#6. Presentar y explorar losd datos
 #crearTabla(filtroProducto,'productosAltosCostos')
 #crearTabla(filtroProductoDos,'productosBajoCosto')
+
+# 6. Presentar y explorar los datos
+ProductosBaratos = productosDataFrame.nsmallest(5, 'Precio_unitario')
+print(ProductosBaratos)
+
+# graficando un dataframe con MATPLOTLIB
+graficar(ProductosBaratos, "figuras/barrasProductos.png","Id_producto","Precio_unitario","Número Producto",
+"Precio",
+"Los 5 productos más baratos",
+45)

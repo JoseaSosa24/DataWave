@@ -3,7 +3,8 @@ import pandas as pd
 
 from helpers.crearCSVVentas import crearCSVVentas
 from helpers.crearTablaHTML import crearTabla
-from helpers.crearGraficaVentas import graficar
+#from helpers.crearGraficaVentas import graficar
+from helpers.crearGrafica import graficar
 
 from data.ventas import ventas
 
@@ -38,15 +39,22 @@ totalVentas2 = filtroDos[['NumeroOrden', 'Costo']]
 # 6. Presentar y explorar los datos
 ventasAltas = ventasDataFrame.nlargest(5, "Costo")
 ventasBajas = ventasDataFrame.nsmallest(5, "Costo")
-#print(ventasBajas)
+print(ventasBajas)
 
 
 # graficando un dataframe con MATPLOTLIB
-graficar(ventasAltas, "figuras/barrasventasAltas.png","Numero de orden",
+graficar(ventasAltas, 
+"figuras/barrasventasAltas.png",
+"NumeroOrden","Costo",
+"Numero de orden",
 "Costo",
 "Ventas más altas en el último mes",
 45)
-graficar(ventasBajas,"figuras/barrasventasBajas.png","Numero de orden",
+graficar(ventasBajas,
+"figuras/barrasventasBajas.png",
+"NumeroOrden",
+"Costo",
+"Numero de orden",
 "Costo",
 "Ventas más bajas en el último mes",
 45)
