@@ -20,6 +20,7 @@ nh3==0.2.14
 numpy==1.26.0
 packaging==23.2
 pandas==2.1.1
+pdfkit==1.0.0
 Pillow==10.0.1
 pkginfo==1.9.6
 Pygments==2.16.1
@@ -29,6 +30,7 @@ python-dateutil==2.8.2
 pytz==2023.3.post1
 pywin32-ctypes==0.2.2
 readme-renderer==42.0
+reportlab==4.0.7
 requests==2.31.0
 requests-toolbelt==1.0.0
 rfc3986==2.0.0
