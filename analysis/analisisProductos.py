@@ -34,15 +34,12 @@ filtroProductoDos = filtroDos[['Id_producto','Nombre','Precio_unitario']]
 
 #5. aplicar modelos estadísticos
 
-#crearTabla(filtroProducto,'productosAltosCostos')
-#crearTabla(filtroProductoDos,'productosBajoCosto')
+crearTabla(filtroProducto,'productosAltosCostos')
+crearTabla(filtroProductoDos,'productosBajoCosto')
 
 # 6. Presentar y explorar los datos
 ProductosBaratos = productosDataFrame.nsmallest(5, 'Precio_unitario')
-print(ProductosBaratos)
+#print(ProductosBaratos)
 
 # graficando un dataframe con MATPLOTLIB
-graficar(ProductosBaratos, "figuras/barrasProductos.png","Id_producto","Precio_unitario","Número Producto",
-"Precio",
-"Los 5 productos más baratos",
-45)
+graficar(ProductosBaratos, "figuras/barrasProductos.png","Id_producto","Precio_unitario","Número Producto","Precio","Los 5 productos más baratos",45)

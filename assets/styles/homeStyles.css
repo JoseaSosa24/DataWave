@@ -93,6 +93,38 @@ main {
 .check {
   margin-right: 3%;
 }
+
+.nosotros{
+  display: flex;
+  flex-direction: column;
+}
+
+.info{
+display: flex;
+flex-direction: column;
+gap: 35px;
+justify-content: center;
+align-items: center;
+}
+
+.link{
+  text-decoration: none;
+
+}
+
+a{
+  color: #000;
+}
+
+
+
+.card{
+  height: 500px;
+}
+
+.card-img-top{
+  height: 70% !important;
+}
 /*footer*/
 
 footer {
@@ -190,6 +222,14 @@ footer {
 
 .youtube {
   --color: #cd201f;
+}
+
+.github{
+  --color: #8000FF;
+}
+
+.linkedin{
+  --color: #1877f2;
 }
 
 .icon:hover,

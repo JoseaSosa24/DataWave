@@ -39,7 +39,7 @@ totalVentas2 = filtroDos[['NumeroOrden', 'Costo']]
 # 6. Presentar y explorar los datos
 ventasAltas = ventasDataFrame.nlargest(5, "Costo")
 ventasBajas = ventasDataFrame.nsmallest(5, "Costo")
-print(ventasBajas)
+#print(ventasBajas)
 
 
 # graficando un dataframe con MATPLOTLIB
@@ -50,12 +50,12 @@ graficar(ventasAltas,
 "Costo",
 "Ventas más altas en el último mes",
 45)
-graficar(ventasBajas,
+""" graficar(ventasBajas,
 "figuras/barrasventasBajas.png",
 "NumeroOrden",
 "Costo",
 "Numero de orden",
 "Costo",
 "Ventas más bajas en el último mes",
-45)
+45, 45) """
 

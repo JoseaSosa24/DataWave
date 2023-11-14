@@ -49,10 +49,7 @@ crearTabla(filtroEmpleadoCuatro,'salariosAltos') """
 
 # 6. Presentar y explorar los datos
 EmpleadosMasGanan = empleadosDataFrame.nlargest(10, 'Salario')
-print(EmpleadosMasGanan)
+#print(EmpleadosMasGanan)
 
 # graficando un dataframe con MATPLOTLIB
-graficar(EmpleadosMasGanan, "figuras/barrasEmpleados.png","ID","Salario","Identificación",
-"Salario",
-"Los empleados que mas ganan",
-45)
+graficar(EmpleadosMasGanan, "figuras/barrasEmpleados.png","ID","Salario","Identificación","Salario","Los empleados que mas ganan",45)
