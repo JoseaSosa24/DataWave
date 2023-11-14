@@ -39,3 +39,22 @@
   width: 76%;
   text-align: center;
 }
+
+.ventas-content {
+  display: flex;
+}
+
+.cards{
+  width: auto;
+  text-align: center;
+}
+
+.boton-pdf{
+  padding: 2%;
+}
+
+.figuras{
+  height: 290px;
+  width: 330px;
+  overflow: hidden;
+}
